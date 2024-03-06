@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PSD Decompiler</title>
+    <style>
+        @font-face {
+            font-family: 'Proxima';
+            src: url('/fonts/proxima.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: 'Proxima', sans-serif;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input[type=file] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #psdInfo {
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 80%;
+            overflow-x: auto;
+        }
+
+        #psdInfo p {
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+        }
+
+        #psdInfo p strong {
+            color: #007bff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>PSD Decompiler</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="psdFile" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="psdInfo"></div>
+    <button id="exportPng" style="margin-top: 10px;">Export to PNG</button>
+    <script src="script.js"></script>
+</body>
+</html>
